@@ -47,7 +47,7 @@ describe("Todo List Test Suite", () => {
         expect(overdue().length).toEqual(1);
     });
 
-    test("checking due tests tiday", () => {
+    test("checking due tests today", () => {
         expect(dueToday().length).toEqual(2);
     });
 
