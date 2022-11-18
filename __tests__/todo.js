@@ -1,5 +1,5 @@
 const todoList = require("../todo");
-const { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
+const { list1, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
 
 describe("Todo List Test Suite", () => {
     beforeAll(() => {
@@ -27,20 +27,20 @@ describe("Todo List Test Suite", () => {
         ].forEach(add);
     });
     test("checks creating a new todo", () => {
-        expect(all.length).toEqual(3);
+        expect(list1.length).toEqual(3);
         add({
             title: "eat Apple",
             completed: false,
             dueDate: new Date().toLocaleDateString("en-CA"),
         });
 
-        expect(all.length).toEqual(4);
+        expect(list1.length).toEqual(4);
     });
 
     test("checking todo list is competed or not", () => {
-        expect(all[0].completed).toEqual(false);
+        expect(list1[0].completed).toEqual(false);
         markAsComplete(0);
-        expect(all[0].completed).toEqual(true);
+        expect(list1[0].completed).toEqual(true);
     });
 
     test("checking overdue", () => {
